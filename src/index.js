@@ -9,7 +9,9 @@ root.render(
   <React.StrictMode>
     <MantineProvider
       theme={
-        {loader: 'bars'}
+        {loader: 'bars',
+          
+        }
       }
     >
       <App />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, createStyles, Group, Header, Title, Burger, Drawer, Divider } from '@mantine/core';
+import { Button, createStyles, Group, Header, Title, Burger, Drawer, Divider, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
@@ -11,8 +11,15 @@ const useStyles = createStyles((theme) => ({
         paddingRight: theme.spacing.md,
         textDecoration: 'none',
         color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-        fontWeight: 400,
+        fontWeight: 500,
         fontSize: theme.fontSizes.md,
+
+        [theme.fn.smallerThan('sm')]: {
+            height: rem(42),
+            display: 'flex',
+            alignItems: 'center',
+            width: '100%',
+        }
     },
     hiddenMobile: {
         [theme.fn.smallerThan('sm')]: {
