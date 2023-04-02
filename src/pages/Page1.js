@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Center } from '@mantine/core';
+import CustomForm from '../components/CustomForm';
 
 export default function Page1() {
   return (
-    <div>Page1</div>
+    <Center sx={{height: '90vh'}}>
+        <CustomForm />
+    </Center>
   )
 }

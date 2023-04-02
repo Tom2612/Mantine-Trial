@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, createStyles, Group, Header, Title, Burger, Drawer, Divider, rem } from '@mantine/core';
+import { Button, createStyles, Group, Header, Title, Burger, Drawer, Divider, rem, ActionIcon, useMantineColorScheme } from '@mantine/core';
+import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import { useDisclosure } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
@@ -34,8 +35,10 @@ const useStyles = createStyles((theme) => ({
 }))
 
 export default function CustomHeader() {
-    const { classes, theme } = useStyles();
+    const { classes } = useStyles();
     const [opened, { toggle, close }] = useDisclosure(false);
+    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+    const dark = colorScheme === 'dark';
   return (
     <Header height={60} px='md'>
         <Group position='apart' sx={{ height: '100%' }}>
@@ -51,6 +54,14 @@ export default function CustomHeader() {
                 <Button>Signup</Button>
             </Group>
             <Burger opened={opened} onClick={toggle} className={classes.hiddenDesktop} />
+            <ActionIcon 
+                variant='outline' 
+                color={dark ? 'yellow' : 'blue'}
+                onClick={() => toggleColorScheme()}
+                title='Toggle color scheme'
+            >
+                {dark ? <IconSun size='1.1rem' /> : <IconMoonStars size='1.1rem' />}
+            </ActionIcon>
         </Group>
 
         <Drawer opened={opened} onClose={close}>

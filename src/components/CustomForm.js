@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TextInput, PasswordInput, Button, Loader, Title, Paper, Flex } from '@mantine/core';
+import { Container, TextInput, PasswordInput, Button, Loader, Title, Paper } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 export default function CustomForm() {
@@ -29,6 +29,7 @@ export default function CustomForm() {
         <form onSubmit={form.onSubmit((values) => console.log(values))}>
           <Title mb='md'>Log in</Title>
           <TextInput
+            sx={{width: '350px'}}
             placeholder='email'
             label='Email'
             withAsterisk
