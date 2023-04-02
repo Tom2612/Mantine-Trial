@@ -25,11 +25,10 @@ export default function CustomForm() {
 
   return (
     <Container size={420} mt='lg'>
-      <Paper size={420} shadow='sm' p='md' withBorder>
+      <Paper shadow='sm' p='md' radius='md' withBorder>
         <form onSubmit={form.onSubmit((values) => console.log(values))}>
           <Title mb='md'>Log in</Title>
           <TextInput
-            // sx={{width: '350px'}}
             placeholder='email'
             label='Email'
             withAsterisk
