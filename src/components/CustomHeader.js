@@ -43,6 +43,7 @@ export default function CustomHeader() {
             <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
                 <a href='/' className={classes.link}>Home</a>
                 <a href='/' className={classes.link}>Concerts</a>
+                <a href='/page1' className={classes.link}>Page1</a>
             </Group>
 
             <Group position='center' px='md' className={classes.hiddenMobile}>
