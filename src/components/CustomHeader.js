@@ -47,21 +47,34 @@ export default function CustomHeader() {
                 <a href='/' className={classes.link}>Home</a>
                 <a href='/' className={classes.link}>Concerts</a>
                 <a href='/page1' className={classes.link}>Page1</a>
+                <a href='/form' className={classes.link}>Form</a>
             </Group>
 
             <Group position='center' px='md' className={classes.hiddenMobile}>
+                <ActionIcon 
+                    variant='outline' 
+                    color={dark ? 'yellow' : 'blue'}
+                    onClick={() => toggleColorScheme()}
+                    title='Toggle color scheme'
+                >
+                    {dark ? <IconSun size='1.1rem' /> : <IconMoonStars size='1.1rem' />}
+                </ActionIcon>
                 <Button variant='default'>Login</Button>
                 <Button>Signup</Button>
             </Group>
-            <Burger opened={opened} onClick={toggle} className={classes.hiddenDesktop} />
-            <ActionIcon 
-                variant='outline' 
-                color={dark ? 'yellow' : 'blue'}
-                onClick={() => toggleColorScheme()}
-                title='Toggle color scheme'
-            >
-                {dark ? <IconSun size='1.1rem' /> : <IconMoonStars size='1.1rem' />}
-            </ActionIcon>
+
+            <Group className={classes.hiddenDesktop}>
+                <ActionIcon 
+                    variant='outline' 
+                    color={dark ? 'yellow' : 'blue'}
+                    onClick={() => toggleColorScheme()}
+                    title='Toggle color scheme'
+                >
+                    {dark ? <IconSun size='1.1rem' /> : <IconMoonStars size='1.1rem' />}
+                </ActionIcon>
+                <Burger opened={opened} onClick={toggle} className={classes.hiddenDesktop} />
+            </Group>
+            
         </Group>
 
         <Drawer opened={opened} onClose={close}>
