@@ -48,6 +48,7 @@ export default function CustomHeader() {
                 <a href='/' className={classes.link}>Concerts</a>
                 <a href='/page1' className={classes.link}>Page1</a>
                 <a href='/form' className={classes.link}>Form</a>
+                <a href='/carousel' className={classes.link}>Carousel</a>
             </Group>
 
             <Group position='center' px='md' className={classes.hiddenMobile}>
